@@ -468,6 +468,8 @@ def _save(im, fp, filename):
         extra,
         )
 
+    ImageFile.MAXBLOCK = 10000000
+
     ImageFile._save(im, fp, [("jpeg", (0,0)+im.size, 0, rawmode)])
 
 def _save_cjpeg(im, fp, filename):
